@@ -22,6 +22,8 @@ import {
 
 import { create } from '@/actions/resultatpsy'
 import RadioFormSixth from "./Sixth-form";
+import RadioFormSecond from "./second-form";
+
 
 
 
@@ -124,11 +126,11 @@ export function RadioPsyForm() {
 
 <RadioForm form={form} name="type10" label={<span>10.Laquelle des figures ci-dessous peut être composée à partir des pièces mobiles suivantes ? <br /> <Image src='/figure.png' width={101} height={101} alt="figure" priority /> </span>  } 
       
-      a={<span><Image src='/figure1.png' width={101} height={101} alt="figure1" priority /></span>}
+       a={<span><Image src='/figure1.png' width={101} height={101} alt="figure1" priority /></span>}
        b={<span><Image src='/figure2.png' width={101} height={101} alt="figure2" priority /></span>}
        c={<span><Image src='/figure3.png' width={101} height={101} alt="figure3" priority /></span>} 
-        d={<span><Image src='/figure4.png' width={101} height={101} alt="figure4" priority /></span>}
-        qt="iq" correctAnswer="Second" />
+       d={<span><Image src='/figure4.png' width={101} height={101} alt="figure4" priority /></span>}
+       qt="iq" correctAnswer="Second" />
 
 <div className="flex flex-col items-center">
   <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
@@ -140,13 +142,13 @@ export function RadioPsyForm() {
 
     <RadioFormThird form={form} name="type11" label={<span><h1> Question1 :</h1> <br /> <Image src='/formes.png' width={275} height={146} alt="formes" priority /> </span>  } 
       
-      a={<span><Image src='/formes1.png' width={120} height={81} alt="formes1" priority /></span>}
+       a={<span><Image src='/formes1.png' width={120} height={81} alt="formes1" priority /></span>}
        b={<span><Image src='/formes2.png' width={131} height={92} alt="formes2" priority /></span>}
        c={<span><Image src='/formes3.png' width={116} height={72} alt="formes3" priority /></span>} 
-        qt="m" correctAnswer="First" />
+       qt="m" correctAnswer="First" />
 
        <RadioFormSixth form={form} name="type12" label={<span> Question2 : <br /> <Image src='/rond&carré.png' width={154} height={156} alt="rond&carré" priority /> </span>}
-        a={<span><Image src='/rond&carré1.png' width={66} height={68} alt="rond&carré1" priority /></span>}
+         a={<span><Image src='/rond&carré1.png' width={66} height={68} alt="rond&carré1" priority /></span>}
          b={<span><Image src='/rond&carré2.png' width={73} height={67} alt="rond&carré2" priority /></span>}
          c={<span><Image src='/rond&carré3.png' width={70} height={69} alt="rond&carré3" priority /></span>}
          d={<span><Image src='/rond&carré4.png' width={66} height={72} alt="rond&carré4" priority /></span>}
@@ -183,6 +185,23 @@ export function RadioPsyForm() {
          e={<span><Image src='/carreau5.png' width={79} height={82} alt="carreau5" priority /></span>}
          f={<span><Image src='/carreau6.png' width={77} height={80} alt="carreau6" priority /></span>}
          qt="m" correctAnswer="Fifth" /> 
+
+
+        <span> <h1>Dans cet exercice de découverte des rôles et des interrelations de cut-e, <br />
+        six diagrammes appartenant chacun à la catégorie grise ou verte sont présentés. <br />
+        Chacune des catégories possède une règle commune. Votre tâche consiste à déterminer <br />
+        la catégorie de chacun des quatre diagrammes disposés en dessous.</h1> 
+        <Image src='/diagrammes.png' width={417} height={256} alt="diagrammes" priority /> </span>
+
+
+   <RadioFormSecond form={form} name="type16" label={<span><Image src='/diagrammes1.png' width={145} height={139} alt="diagrammes1" priority /></span>}
+    a="" b="" qt="m" correctAnswer="Verte" /> 
+   <RadioFormSecond form={form} name="type17" label={<span><Image src='/diagrammes2.png' width={122} height={139} alt="diagrammes2" priority /></span>}
+    a="" b="" qt="m" correctAnswer="Grise" /> 
+   <RadioFormSecond form={form} name="type18" label={<span><Image src='/diagrammes3.png' width={124} height={136} alt="diagrammes3" priority /></span>} 
+    a="" b="" qt="m" correctAnswer="Verte" /> 
+   <RadioFormSecond form={form} name="type19" label={<span><Image src='/diagrammes4.png' width={114} height={140} alt="diagrammes4" priority /></span>}
+    a="" b="" qt="m" correctAnswer="Grise" /> 
 
 
       <Button type="submit">Submit</Button>

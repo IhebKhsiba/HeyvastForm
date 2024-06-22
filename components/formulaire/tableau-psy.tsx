@@ -1,6 +1,8 @@
 "use client"
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button"
+
 export function Questionnaire () {
   const [responses, setResponses] = useState<string[]>(new Array(45).fill(''));
 
@@ -13,7 +15,6 @@ export function Questionnaire () {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Responses:', responses);
-    
   };
 
   return (
@@ -73,14 +74,12 @@ export function Questionnaire () {
             "Je crois que les lois devraient être appliquées de façon stricte.",
             "Je me sens capable de prendre les choses en main.",
             "Je valorise mon temps.",
-            "J'ai une facilité à comprendre les idées abstraites.",     
+            "J'ai une facilité à comprendre les idées abstraites.",
             "Je m'investis pleinement dans mon travail.",
             "Je me sens bien parmi mes collègues.",
-
-
           ].map((question, index) => (
             <tr key={index}>
-              <td>{question}</td>
+              <td>{`${index + 1}. ${question}`}</td>
               {['0', '1', '2', '3', '4'].map((option) => (
                 <td key={option}>
                   <input

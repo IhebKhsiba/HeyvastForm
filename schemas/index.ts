@@ -7,8 +7,7 @@ import * as z from 'zod'
 
 
 const UserSchema = z.object({
-    id: z.string(), // ou tout autre type approprié pour l'ID de l'utilisateur
-    // Ajoutez d'autres propriétés de l'utilisateur si nécessaire
+    id: z.string(), 
 });
 export const LoginSchema = z.object({
     email: z.string().email({
