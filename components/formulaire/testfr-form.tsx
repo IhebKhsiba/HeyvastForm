@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react";
-
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -39,9 +38,6 @@ export function RadioGroupForm() {
     resolver: zodResolver(FormSchema),
   })
   
-
-  
-
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log("submited")
     
@@ -154,5 +150,6 @@ export function RadioGroupForm() {
   )
   
 }
+
 export default RadioGroupForm;
 

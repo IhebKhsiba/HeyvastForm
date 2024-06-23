@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -83,26 +83,29 @@ const Step2: React.FC<Step2Props> = ({ onPrev, onNext, onScoreCalculated }) => {
     const newResponses = [...responses];
     newResponses[index] = value;
     setResponses(newResponses);
+    console.log('Updated Responses:', newResponses); // Log updated responses
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Responses:', responses);
+    console.log('Final Responses:', responses); // Log final responses before calculating score
     calculateScore();
   };
 
   const calculateScore = () => {
     let score = 0;
     responses.forEach(response => {
-      score += parseInt(response, 10) || 0; // Accumulate the scores
+      score += parseInt(response) || 0; // Accumulate the scores
+      console.log('CScore:', score); // Debugging: log the calculated score
     });
+    console.log('Calculated Score:', score); // Debugging: log the calculated score
     onScoreCalculated(score); // Pass the score to the parent component
     onNext();
   };
 
   return (
     <Card className="shadow-lg rounded-lg p-6">
-      <h1 className="text-center text-2xl font-bold mb-4">Tableau d'accords</h1>
+      <h1 className="text-center text-2xl font-bold mb-4">Tests psychotechniques     </h1>
       <Table className="mb-6">
         <TableCaption className="text-center font-bold">Tableau d'accords</TableCaption>
         <TableHeader>
@@ -144,19 +147,13 @@ const Step2: React.FC<Step2Props> = ({ onPrev, onNext, onScoreCalculated }) => {
                 <td className="border p-2">{`${index + 1}. ${question}`}</td>
                 {['0', '1', '2', '3', '4'].map((option) => (
                   <td key={option} className="border p-2 text-center">
-                    <label className="block w-full h-full cursor-pointer">
-                      <input
-                        type="radio"
-                        name={`question-${index}`}
-                        value={option}
-                        checked={responses[index] === option}
-                        onChange={(e) => handleChange(index, e.target.value)}
-                        className="hidden"
-                      />
-                      <span className={`block w-full h-full p-2 ${responses[index] === option ? 'bg-blue-200' : ''}`}>
-                        {option}
-                      </span>
-                    </label>
+                    <input
+                      type="radio"
+                      name={`question-${index}`}
+                      value={option}
+                      checked={responses[index] === option}
+                      onChange={(e) => handleChange(index, e.target.value)}
+                    />
                   </td>
                 ))}
               </tr>

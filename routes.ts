@@ -9,7 +9,8 @@ export const publicRoutes = [
     "/",
     "/test",
     "/testpsy",
-    "/welcome-page"
+    "/welcome-page",
+   
     
 ]
 
@@ -43,3 +44,13 @@ export const apiAuthPrefix = "/api/auth"
 
 
 export const DEFAULT_LOGIN_REDIRECT = "/settings"
+
+/**
+ * An array of API routes that are accessible to the public
+ * these API routes do not require authentication!
+ * @type {string[]}
+ */
+export const publicApiRoutes = [
+    "/api/submitCandidate",
+    "/api/submit-candidate"
+];

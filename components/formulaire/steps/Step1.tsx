@@ -14,12 +14,11 @@ const FormSchema = z.object({
   firstName: z.string().min(2, "First name is required."),
   lastName: z.string().min(2, "Last name must be at least 2 characters."),
   email: z.string().email("Invalid email address."),
-  phoneNumber: z.string().min(10, "Phone number must be at least 10 digits."),
+  phoneNumber: z.string().min(8, "Phone number must be at least 10 digits."),
   educationLevel: z.string().min(2, "Education level is required."),
   dob: z.string().nullable(), // Changed to string
 });
-
-type FormSchemaType = z.infer<typeof FormSchema>;
+export type FormSchemaType = z.infer<typeof FormSchema>;
 
 interface Step1Props {
   onNext: (userData: FormSchemaType) => void; // Function to move to the next step and pass user data

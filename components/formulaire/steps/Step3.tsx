@@ -120,6 +120,7 @@ const Step3: FC<Step3Props> = ({ onPrev, onNext, onScoreCalculated }) => {
       }
     }
     onScoreCalculated(score);
+    
     onNext();
   };
 

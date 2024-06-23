@@ -3,7 +3,8 @@ import {
     DEFAULT_LOGIN_REDIRECT,
     apiAuthPrefix,
     authRoutes,
-    publicRoutes
+    publicRoutes,
+    publicApiRoutes
 } from "@/routes"
 import authConfig from "./auth.config"
 
@@ -16,6 +17,11 @@ export default auth((req) => {
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
     const isAuthRoute = authRoutes.includes(nextUrl.pathname)
+    const isPublicApiRoute = publicApiRoutes.includes(nextUrl.pathname);
+
+    if (isPublicApiRoute) {
+        return null;
+    }
 
     if (isApiAuthRoute){
         return null
