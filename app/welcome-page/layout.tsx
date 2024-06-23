@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+   
        <div
         className={cn(
           " bg-gradient-to-r from-white font-sans antialiased flex items-center justify-center",
@@ -27,5 +27,5 @@ export default function RootLayout({
       >       
         {children}       
         </div>
-    );
+   );
 }

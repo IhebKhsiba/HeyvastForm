@@ -1,10 +1,24 @@
 
+"use client"
 
+import { useState } from "react";
 import { RadioPsyForm } from "@/components/formulaire/radiopsy-form"
 import { Questionnaire } from "@/components/formulaire/tableau-psy"
 import TableDemo from "@/components/formulaire/explication-form";
 
 const psyPage = () => {
+
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const handleNextStep = () => {
+    setCurrentStep((prevStep) => prevStep + 1);
+  };
+
+  const handlePrevStep = () => {
+    setCurrentStep((prevStep) => prevStep - 1);
+  };
+
+
   return (
     <div>
         <div className="flex justify-center ">

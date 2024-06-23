@@ -8,6 +8,8 @@
 export const publicRoutes = [
     "/",
     "/test",
+    "/testpsy",
+    "/welcome-page"
     
 ]
 
