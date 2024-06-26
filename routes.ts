@@ -10,6 +10,8 @@ export const publicRoutes = [
     "/test",
     "/testpsy",
     "/welcome-page",
+    "/auth/testy",
+    "/thank-you",
    
     
 ]

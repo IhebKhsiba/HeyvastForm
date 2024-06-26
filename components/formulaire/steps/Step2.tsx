@@ -12,7 +12,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Card } from "@/components/ui/card";
+import { 
+  Card,
+  CardTitle,
+
+
+ } from "@/components/ui/card";
 
 interface Step2Props {
   onPrev: () => void;
@@ -101,11 +106,13 @@ const Step2: React.FC<Step2Props> = ({ onPrev, onNext, onScoreCalculated }) => {
     console.log('Calculated Score:', score); // Debugging: log the calculated score
     onScoreCalculated(score); // Pass the score to the parent component
     onNext();
+    
   };
 
   return (
     <Card className="shadow-lg rounded-lg p-6">
-      <h1 className="text-center text-2xl font-bold mb-4">Tests psychotechniques     </h1>
+       <CardTitle className="text-2xl text-center">Test Psychotechnique.</CardTitle>
+       <CardTitle className="text-2xl text-center">Parlons un peu de vous.</CardTitle>
       <Table className="mb-6">
         <TableCaption className="text-center font-bold">Tableau d'accords</TableCaption>
         <TableHeader>

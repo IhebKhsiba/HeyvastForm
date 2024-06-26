@@ -21,7 +21,7 @@ export default function RootLayout({
    
        <div
         className={cn(
-          " bg-gradient-to-r from-white font-sans antialiased flex items-center justify-center",
+          " bg-gradient-to-b from-purple-600 to-blue-800 font-sans antialiased flex items-center justify-center",
           fontSans.variable
         )}
       >       

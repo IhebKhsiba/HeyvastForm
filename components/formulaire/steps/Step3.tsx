@@ -127,18 +127,14 @@ const Step3: FC<Step3Props> = ({ onPrev, onNext, onScoreCalculated }) => {
   return (
     <Card className="shadow-lg rounded-lg p-6">
       <CardHeader>
-        <CardTitle className="text-xl text-center">Test IQ</CardTitle>
-        <CardDescription className="text-center">
-          Answer the following questions
-        </CardDescription>
+        <CardTitle className="text-2xl text-center">Test QI</CardTitle>
+        <CardTitle className="text-2xl text-center">Bonne chance !</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="flex flex-col items-center">
-              <div>
-                <h2>Synonyme :</h2>
-              </div>
+              
             </div>
             <RadioForm form={form} name="type1" label="1. Lequel des mots ci-dessous a le sens le plus proche du terme « rassurant » ?" a="Compatissant" b="réconfortant" c="explicatif" d="indiscret" />
             <RadioForm form={form} name="type2" label={<span>2. Quel nombre est la suite logique de cette série : <br /> 4 6 9 6 14 6 ... </span>} a="6" b="17" c="19" d="21" />
@@ -151,9 +147,7 @@ const Step3: FC<Step3Props> = ({ onPrev, onNext, onScoreCalculated }) => {
             <RadioForm form={form} name="type9" label="9. Quel mot exprime un sentiment de mécontentement ?" a="injustice" b="plainte" c="futile" d="péché" e="discorde" />
             <RadioForm form={form} name="type10" label={<span>10. Laquelle des figures ci-dessous peut être composée à partir des pièces mobiles suivantes ? <br /> <Image src='/figure.png' width={101} height={101} alt="figure" priority /> </span>} a={<span><Image src='/figure1.png' width={101} height={101} alt="figure1" priority /></span>} b={<span><Image src='/figure2.png' width={101} height={101} alt="figure2" priority /></span>} c={<span><Image src='/figure3.png' width={101} height={101} alt="figure3" priority /></span>} d={<span><Image src='/figure4.png' width={101} height={101} alt="figure4" priority /></span>} />
             <div className="flex flex-col items-center">
-              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                LES MATRICES :
-              </h1>
+            <CardTitle className="text-2xl text-center">Passons aux matrices.</CardTitle>
             </div>
             <h2 className="text-bold-xl">• Une même consigne pour toutes ces questions : quelle case numérotée complète logiquement la matrice ?</h2>
             <RadioForm form={form} name="type11" label={<span>Question1 : <br /> <Image src='/formes.png' width={275} height={146} alt="formes" priority /> </span>} a={<span><Image src='/formes1.png' width={120} height={81} alt="formes1" priority /></span>} b={<span><Image src='/formes2.png' width={131} height={92} alt="formes2" priority /></span>} c={<span><Image src='/formes3.png' width={116} height={72} alt="formes3" priority /></span>} />
