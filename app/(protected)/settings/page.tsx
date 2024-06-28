@@ -75,10 +75,10 @@ const SettingsPage =  () => {
   
 
     return (
-        <Card className="w-600px">
+        <Card className="bg-secondary flex justify-between items-center p-4 rounded-xl w-[600px] shadow-sm">
             <CardHeader>
                 <p className="text-2xl font-semibold text-center">
-                    Settings
+                paramètres
                 </p>
             </CardHeader>
             <CardContent>

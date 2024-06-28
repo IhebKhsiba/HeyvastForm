@@ -92,7 +92,7 @@ model Candidate {
   email             String   @unique
   phoneNumber       String
   educationLevel    String
-  dob               DateTime?
+  age               String
   testsPsychotechniquesScore Int
   iqTestScore       Int
   frenchScore       Int

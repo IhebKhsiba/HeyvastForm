@@ -34,43 +34,43 @@ const TestFrench: React.FC<TestFrenchProps> = ({ onNext, onPrev, onScoreCalculat
   });
 
   const correctAnswers = {
-    type1: "Second",
+    type1: "First",
     type2: "Fourth",
-    type3: "Second",
+    type3: "First",
     type4: "Second",
-    type5: "Second",
-    type6: "First",
-    type7: "Fourth",
-    type8: "Second",
-    type9: "Second",
-    type10: "Second",
-    type11: "First",
-    type12: "Second",
-    type13: "First",
-    type14: "Fourth",
-    type15: "Fourth",
-    type16: "First",
-    type17: "Second",
+    type5: "Fourth",
+    type6: "Second",
+    type7: "Second",
+    type8: "First",
+    type9: "Third",
+    type10: "First",
+    type11: "Second",
+    type12: "First",
+    type13: "Third",
+    type14: "Second",
+    type15: "First",
+    type16: "Second",
+    type17: "Fourth",
     type18: "First",
-    type19: "Second",
+    type19: "Third",
     type20: "Fourth",
     type21: "First",
-    type22: "Second",
-    type23: "First",
-    type24: "Fourth",
-    type25: "Fourth",
-    type26: "First",
+    type22: "First",
+    type23: "Third",
+    type24: "Third",
+    type25: "Third",
+    type26: "Fourth",
     type27: "Fourth",
-    type28: "Second",
-    type29: "Second",
+    type28: "Third",
+    type29: "Third",
     type30: "Second",
     type31: "Second",
     type32: "Second",
-    type33: "First",
+    type33: "Second",
     type34: "Third",
     type35: "First",
-    type36: "Fourth",
-    type37: "First",
+    type36: "First",
+    type37: "Third",
     type38: "Second",
     type39: "Third",
     type40: "First",
@@ -93,13 +93,15 @@ const TestFrench: React.FC<TestFrenchProps> = ({ onNext, onPrev, onScoreCalculat
     }
     onScoreCalculated(score);
     onNext(data);
+   
   };
 
   return (
     <Card className="shadow-lg rounded-lg p-6">
       <CardHeader>
-        <CardTitle className="text-2xl text-center">Tests psychotechniques</CardTitle>
-        <CardDescription className="text-center">Answer the following questions</CardDescription>
+      
+        <CardTitle className="text-2xl text-center">Testez vos connaissances en français.</CardTitle>
+        <CardTitle className="text-2xl text-center">Bonne chance!</CardTitle>
       </CardHeader>
       <CardContent>
         <FormProvider {...methods}>
@@ -121,7 +123,7 @@ const TestFrench: React.FC<TestFrenchProps> = ({ onNext, onPrev, onScoreCalculat
             <div className="flex flex-col items-center">
               <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Conjugaison</h1>
             </div>
-            <RadioForm name="type11" label="11. Quelle forme est correcte?" a="J'apele" b="J'appelle" c="J'appelle" d="J'apelle" qt="c" correctAnswer="Second" />
+            <RadioForm name="type11" label="11. Quelle forme est correcte?" a="J'apele" b="J'appelle" c="J'appele" d="J'apelle" qt="c" correctAnswer="Second" />
             <RadioForm name="type12" label="12. ... de te plaindre !" a="Arrête" b="Arrêtes" c="Arête" d="Arêtes" qt="c" correctAnswer="First" />
             <RadioForm name="type13" label="13. À quel temps est la forme « Je courrais» ?" a="Imparfait" b="Futur" c="Conditionnel" d="Subjonctif" qt="c" correctAnswer="Third" />
             <RadioForm name="type14" label="14. Quelle forme est correcte ?" a="J'envoierai" b="J'enverrai" c="J'enverai" d="J'envoyerai" qt="c" correctAnswer="Second" />

@@ -4,11 +4,11 @@ import prisma from "@/lib/prismaDb"; // Ensure this path is correct
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phoneNumber, educationLevel, dob, testsPsychotechniquesScore, iqTestScore, frenchScore } = body;
+    const { firstName, lastName, email, phoneNumber, educationLevel, age, testsPsychotechniquesScore, iqTestScore, frenchScore } = body;
  
     console.log(body);
     // Validate if the body fields are not empty
-    console.log("Validation failed. Missing fields:", { firstName, lastName, email, phoneNumber, educationLevel, testsPsychotechniquesScore, iqTestScore, frenchScore });
+    console.log("Validation failed. Missing fields:", { firstName, lastName, email, phoneNumber, educationLevel, age, testsPsychotechniquesScore, iqTestScore, frenchScore });
 
     if (
       !firstName || 
@@ -16,6 +16,7 @@ export async function POST(request) {
       !email || 
       !phoneNumber || 
       !educationLevel || 
+      !age ||
       testsPsychotechniquesScore === undefined || 
       iqTestScore === undefined || 
       frenchScore === undefined
@@ -35,7 +36,7 @@ export async function POST(request) {
         email,
         phoneNumber,
         educationLevel,
-        dob: dob ? new Date(dob) : null,
+        age,
         testsPsychotechniquesScore,
         iqTestScore,
         frenchScore,

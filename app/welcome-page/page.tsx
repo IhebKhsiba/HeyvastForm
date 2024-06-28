@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+ 
 import Step1 from "@/components/formulaire/steps/Step1";
 import Step2 from "@/components/formulaire/steps/Step2";
 import Step3 from "@/components/formulaire/steps/Step3";
@@ -14,7 +15,7 @@ const Welcomepage = () => {
   const [userData, setUserData] = useState<FormSchemaType | null>(null);
   const [score2, setScore2] = useState(0);
   const [score3, setScore3] = useState(0);
-  const [frenchScore, setFrenchScore] = useState(0); // New state for French test score
+  const [frenchScore, setFrenchScore] = useState(0); 
 
   const handleNextStep = (data?: FormSchemaType) => {
     if (data && currentStep === 1) {
@@ -28,7 +29,7 @@ const Welcomepage = () => {
   };
 
   const handleFrenchScoreCalculated = (calculatedScore: number) => {
-    setFrenchScore(calculatedScore); // New function to handle French test score
+    setFrenchScore(calculatedScore); 
   };
 
   const handleScore2Calculated = (calculatedScore: number) => {
@@ -46,7 +47,7 @@ const Welcomepage = () => {
         <TestFrench
           onPrev={handlePrevStep}
           onNext={() => handleNextStep()}
-          onScoreCalculated={handleFrenchScoreCalculated} // Pass the score handler for French test
+          onScoreCalculated={handleFrenchScoreCalculated} 
         />
       )}
       {currentStep === 3 && (
@@ -69,7 +70,7 @@ const Welcomepage = () => {
           userData={userData}
           score2={score2}
           score3={score3}
-          frenchScore={frenchScore} // Pass the French test score to Step4
+          frenchScore={frenchScore} 
         />
       )}
     </div>

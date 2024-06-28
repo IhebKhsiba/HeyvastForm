@@ -10,6 +10,8 @@ export const publicRoutes = [
     "/test",
     "/testpsy",
     "/welcome-page",
+    "/thank-you"
+    
    
     
 ]
@@ -52,5 +54,6 @@ export const DEFAULT_LOGIN_REDIRECT = "/settings"
  */
 export const publicApiRoutes = [
     "/api/submitCandidate",
-    "/api/submit-candidate"
+    "/api/submit-candidate",
+    "/api/email",
 ];

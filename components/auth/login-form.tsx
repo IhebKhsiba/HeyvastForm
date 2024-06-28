@@ -49,7 +49,7 @@ export const LoginForm = () => {
     return (
         <CardWrapper
         headerLabel="Veuillez vous identifier"
-        backButtonHref="/auth/condidat"
+        backButtonHref="/welcome-page"
         BackButtonLabel='Êtes-vous un candidat ?'
         
         >

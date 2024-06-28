@@ -63,7 +63,7 @@ CREATE TABLE `Candidate` (
     `email` VARCHAR(191) NOT NULL,
     `phoneNumber` VARCHAR(191) NOT NULL,
     `educationLevel` VARCHAR(191) NOT NULL,
-    `dob` DATETIME(3) NULL,
+    `age` VARCHAR(191) NOT NULL,
     `testsPsychotechniquesScore` INTEGER NOT NULL,
     `iqTestScore` INTEGER NOT NULL,
     `frenchScore` INTEGER NOT NULL,

@@ -1,6 +1,6 @@
 // components/formulaire/steps/SpecialRadioForm.tsx
 import { FC } from "react";
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, useController } from "react-hook-form";
 
 interface SpecialRadioFormProps {
   form: UseFormReturn<any>;
@@ -11,6 +11,13 @@ interface SpecialRadioFormProps {
 }
 
 const SpecialRadioForm: FC<SpecialRadioFormProps> = ({ form, name, label, a, b }) => {
+  const {
+    field,
+    fieldState: { error },
+  } = useController({
+    name,
+    control: form.control,
+  });
   return (
     <div className="mb-6">
       <label className="block text-lg font-medium text-gray-700 mb-2">{label}</label>
@@ -20,7 +27,7 @@ const SpecialRadioForm: FC<SpecialRadioFormProps> = ({ form, name, label, a, b }
           {a}
         </label>
         <label className="flex items-center">
-          <input type="radio" {...form.register(name)} value="Grise" className="form-radio mr-2" />
+          <input type="radio" {...form.register(name)} value="Grise" checked={field.value === "Grise"} className="form-radio mr-2" />
           {b}
         </label>
       </div>
