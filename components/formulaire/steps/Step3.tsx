@@ -166,8 +166,8 @@ const Step3: FC<Step3Props> = ({ onPrev, onNext, onScoreCalculated }) => {
             <SpecialRadioForm form={form} name="type18" label={<span><Image src='/diagrammes3.png' width={124} height={136} alt="diagrammes3" priority /></span>} a="Verte" b="Grise" />
             <SpecialRadioForm form={form} name="type19" label={<span><Image src='/diagrammes4.png' width={114} height={140} alt="diagrammes4" priority /></span>} a="Verte" b="Grise" />
             <div className="mt-8 flex justify-between">
-              <Button type="button" onClick={onPrev}>Back</Button>
-              <Button type="submit">Submit</Button>
+              <Button type="button" onClick={onPrev}>Retour</Button>
+              <Button type="submit">Suivant</Button>
             </div>
           </form>
         </Form>

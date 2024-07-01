@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { userData, score2, score3 , frenchScore} = await request.json();
+  const { userData, score3, experience, agreabilite, extraversion, nervosisme, conscience, frenchScore} = await request.json();
   console.log(userData)
   const transport = nodemailer.createTransport({
     host: "heyvast.com",
@@ -25,7 +25,12 @@ export async function POST(request: NextRequest) {
     Âge : ${userData.age} \n
     Email : ${userData.email} \n
     Numéro de téléphone : ${userData.phoneNumber} \n 
-    Niveau d'éducation : ${userData.educationLevel} \n 
+    Niveau d'éducation : ${userData.educationLevel} \n
+    Ouverture à l'expérience : ${experience}% \n
+    Conscience : ${conscience}% \n 
+    Extraversion : ${extraversion}% \n 
+    Agréabilité : ${agreabilite}% \n 
+    Névrosisme : ${nervosisme}% \n   
     Note en français : ${frenchScore}/48 \n 
     Note en Qi et Matrice : ${score3}/19 ` ,
           

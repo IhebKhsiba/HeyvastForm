@@ -6,14 +6,16 @@ import Step2 from "@/components/formulaire/steps/Step2";
 import Step3 from "@/components/formulaire/steps/Step3";
 import Step4 from "@/components/formulaire/steps/Step4";
 import TestFrench from "@/components/formulaire/steps/TestFrench";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import type { FormSchemaType } from "@/components/formulaire/steps/Step1";
 
 const Welcomepage = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [userData, setUserData] = useState<FormSchemaType | null>(null);
-  const [score2, setScore2] = useState(0);
+  const [experience, setExperience] = useState(0)
+  const [conscience, setConscience] = useState(0)
+  const [extraversion, setExtraversion] = useState(0)
+  const [agreabilite, setAgreabilite] = useState(0)
+  const [nervosisme, setNervosisme] = useState(0)
   const [score3, setScore3] = useState(0);
   const [frenchScore, setFrenchScore] = useState(0); 
 
@@ -32,8 +34,24 @@ const Welcomepage = () => {
     setFrenchScore(calculatedScore); 
   };
 
-  const handleScore2Calculated = (calculatedScore: number) => {
-    setScore2(calculatedScore);
+  const handleExperienceCalculated = (calculatedScore: number) => {
+    setExperience(calculatedScore);
+  };
+
+  const handleConscienceCalculated = (calculatedScore: number) => {
+    setConscience(calculatedScore);
+  };
+
+  const handleExtraversionCalculated = (calculatedScore: number) => {
+    setExtraversion(calculatedScore);
+  };
+
+  const handleAgreabiliteCalculated = (calculatedScore: number) => {
+    setAgreabilite(calculatedScore);
+  };
+
+  const handleNervosismeCalculated = (calculatedScore: number) => {
+    setNervosisme(calculatedScore);
   };
 
   const handleScore3Calculated = (calculatedScore: number) => {
@@ -54,9 +72,18 @@ const Welcomepage = () => {
         <Step2
           onPrev={handlePrevStep}
           onNext={() => handleNextStep()}
-          onScoreCalculated={handleScore2Calculated}
+          experience={handleExperienceCalculated}
+          conscience={handleConscienceCalculated}
+          extraversion={handleExtraversionCalculated}
+          agreabilite={handleAgreabiliteCalculated}
+          nervosisme={handleNervosismeCalculated}
+          
+          
         />
+        
       )}
+      
+
       {currentStep === 4 && (
         <Step3
           onPrev={handlePrevStep}
@@ -68,7 +95,11 @@ const Welcomepage = () => {
         <Step4
           onPrev={handlePrevStep}
           userData={userData}
-          score2={score2}
+          experience = {experience}
+          conscience = {conscience}
+          extraversion = {extraversion}
+          agreabilite = {agreabilite}
+          nervosisme = {nervosisme}
           score3={score3}
           frenchScore={frenchScore} 
         />

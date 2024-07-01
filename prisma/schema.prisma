@@ -93,7 +93,11 @@ model Candidate {
   phoneNumber       String
   educationLevel    String
   age               String
-  testsPsychotechniquesScore Int
+  experience        Float
+  conscience        Float
+  extraversion      Float
+  agreabilite       Float
+  nervosisme        Float
   iqTestScore       Int
   frenchScore       Int
 }

@@ -17,13 +17,18 @@ export interface Step4Props {
     educationLevel: string;
     age: string;
   };
-  score2: number;
+  experience: number;
+  conscience: number;
+  extraversion: number;
+  agreabilite: number;
+  nervosisme: number;
+  
   score3: number;
   frenchScore: number; 
 }
 
 
-const Step4: FC<Step4Props> = ({ userData, score2, score3, frenchScore }) => {
+const Step4: FC<Step4Props> = ({ userData,experience,conscience,extraversion,agreabilite,nervosisme,score3, frenchScore }) => {
   const router = useRouter();
 
   const handleSubmit = async () => {
@@ -39,18 +44,25 @@ const Step4: FC<Step4Props> = ({ userData, score2, score3, frenchScore }) => {
         email: userData.email,
         educationLevel: userData.educationLevel,
         age: userData.age,
-        testsPsychotechniquesScore: score2,
+        experience: experience,
+        conscience: conscience,
+        extraversion: extraversion,
+        agreabilite: agreabilite,
+        nervosisme: nervosisme,
+        
+
         iqTestScore: score3,
         frenchScore: frenchScore,
       }),
     });
-
+    console.log(experience,extraversion,nervosisme,agreabilite,conscience)
     if (response.ok) {
       console.log('Data saved successfully');
-      await sendEmail({ userData, score2, score3, frenchScore }); 
+      await sendEmail({ userData,experience,conscience,extraversion,agreabilite,nervosisme, score3, frenchScore }); 
       router.push('/thank-you');
     } else {
       console.error('Failed to save data');
+
     }
   };
 
@@ -65,6 +77,16 @@ const Step4: FC<Step4Props> = ({ userData, score2, score3, frenchScore }) => {
   }else {
     return "success";
   }
+}
+
+const getColorP = (value: number):Color =>{
+  if (value < 20) {
+    return "danger";
+}else if (value >= 20 && value <= 50){
+  return "primary";
+}else {
+  return "success";
+}
 }
   
   const getColor = (value: number): Color => {
@@ -95,15 +117,43 @@ const Step4: FC<Step4Props> = ({ userData, score2, score3, frenchScore }) => {
           <p><strong>Niveau d'éducation : </strong> {userData.educationLevel}</p>
           <p><strong>Âge : </strong> {userData.age}</p>
 
-          <h2 className="text-lg text-center font-bold">Votre résultat au test</h2>
+          <h2 className="text-lg text-center font-bold">Profil selon le test</h2>
+          
+          <p><strong>Ouverture à l'expérience : </strong></p>
+          <div className="border-solid border-2 border-gray-300 rounded-full ...">
+          <Progress  maxValue={100} color={getColorP(experience)} aria-label="Ouverture à l'expérience" value={experience} /> 
+          </div>
+
+          <p><strong>Conscience : </strong></p>
+          <div className="border-solid border-2 border-gray-300 rounded-full ...">
+          <Progress  maxValue={100} color={getColorP(conscience)} aria-label="Conscience" value={conscience} /> 
+          </div>
+
+          <p><strong>Extraversion : </strong></p>
+          <div className="border-solid border-2 border-gray-300 rounded-full ...">
+          <Progress  maxValue={100} color={getColorP(extraversion)} aria-label="Extraversion" value={extraversion} /> 
+          </div>
+
+          <p><strong>Agréabilité : </strong></p>
+          <div className="border-solid border-2 border-gray-300 rounded-full ...">
+          <Progress  maxValue={100} color={getColorP(agreabilite)} aria-label="Agréabilité" value={agreabilite} /> 
+          </div>
+
+          <p><strong>Névrosisme : </strong></p>
+          <div className="border-solid border-2 border-gray-300 rounded-full ...">
+          <Progress  maxValue={100} color={getColorP(nervosisme)} aria-label="Névrosisme" value={nervosisme} /> 
+          </div>
+
+
+
+          <h2 className="text-lg text-center font-bold">Votre résultat</h2>
           <p><strong>Score Francais:</strong> {frenchScore}/48</p>
           <div className="border-solid border-2 border-gray-300 rounded-full ...">
           <Progress maxValue={48} color={getColor(frenchScore)} aria-label="votre francais" value={frenchScore} /> 
           </div>
-          <p><strong>Tests Psychotechniques Score:</strong> {score2}</p>
           <p><strong>Score QI & Matrice:</strong> {score3}/19</p>
           <div className="border-solid border-2 border-gray-300 rounded-full ...">
-          <Progress  maxValue={20} color={getColorTwo(score3)} aria-label="votre QI" value={score3} />
+          <Progress  maxValue={19} color={getColorTwo(score3)} aria-label="votre QI" value={score3} />
           </div>
           <div className="flex flex-col gap-6 w-full max-w-md">
          
